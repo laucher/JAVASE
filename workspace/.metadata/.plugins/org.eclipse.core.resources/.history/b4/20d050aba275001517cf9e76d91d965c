@@ -1,0 +1,51 @@
+package com.java.xml;
+
+import java.io.File;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+public class CreateDOMxml {
+	
+	public static void main(String[] arg0) throws Exception{
+		DocumentBuilderFactory dbf=DocumentBuilderFactory.newInstance();
+		try {
+			DocumentBuilder db=dbf.newDocumentBuilder();
+			Document document=db.newDocument();
+			document.setXmlStandalone(true);
+			Element bookstore=document.createElement("bookstore");
+			document.appendChild(bookstore);
+			Element book=document.createElement("book");
+			book.setAttribute("id", "1");
+			book.setAttribute("size", "3.5");
+			bookstore.appendChild(book);
+			
+			
+			TransformerFactory tff=TransformerFactory.newInstance();
+			Transformer tf=tff.newTransformer();
+			tf.transform(new DOMSource(document), new StreamResult(new File("books1.xml")));
+			
+			
+			
+			
+			
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+
+}

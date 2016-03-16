@@ -1,0 +1,11 @@
+package com.java.xml;
+
+public class DOMTest {
+	
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

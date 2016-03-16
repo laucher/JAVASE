@@ -1,0 +1,13 @@
+package com.java.xml;
+
+import java.io.File;
+
+public class DOMTest {
+	
+
+	public static void main(String[] args) {
+		File file=new File("book.xml");
+
+	}
+
+}

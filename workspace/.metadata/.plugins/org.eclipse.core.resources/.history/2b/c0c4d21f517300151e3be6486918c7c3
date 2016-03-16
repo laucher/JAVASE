@@ -1,0 +1,56 @@
+package com.java.xml;
+
+import java.io.File;
+import java.io.IOException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+public class DOMTest {
+	
+
+	public static void main(String[] args) {
+		File file=new File("book.xml");
+		DocumentBuilderFactory dbf=DocumentBuilderFactory.newInstance();
+		try {
+			DocumentBuilder db=dbf.newDocumentBuilder();
+			Document document=db.parse(file);
+			NodeList booklist=document.getElementsByTagName("book");
+			
+			for(int i=0;i<booklist.getLength();i++){
+				Element book=(Element)booklist.item(i);
+				String s1=book.getAttribute("id");
+				System.out.println("s1");
+//				NamedNodeMap attrs= book.getAttributes();
+//				for(int j=0;j<attrs.getLength();j++){
+//					String s1=attrs.item(j).getNodeName();
+//					String s2= attrs.item(j).getNodeValue();
+//					System.out.println(s1+"\t"+s2);
+//					
+//				}
+				
+			}
+			
+			
+			}catch (SAXException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}catch (ParserConfigurationException e) {	
+				// TODO Auto-generated catch block
+			   e.printStackTrace();
+		}
+
+	}
+
+}

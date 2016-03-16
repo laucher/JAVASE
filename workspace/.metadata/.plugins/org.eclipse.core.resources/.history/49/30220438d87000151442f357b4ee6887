@@ -1,0 +1,27 @@
+package Typelist;
+
+public class Typetype {
+	private int i;
+	private  int j;
+	private  String s;
+	
+	public Typetype(){
+		System.out.println("this is a const.");
+	}
+	
+	public void print(){
+		System.out.println("this is a moteh");
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+class Typeextends extends Typetype{
+	 
+	public String s2="myself";
+	
+}

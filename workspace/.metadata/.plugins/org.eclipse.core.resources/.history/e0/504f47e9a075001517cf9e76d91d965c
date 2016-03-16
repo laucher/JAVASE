@@ -1,0 +1,9 @@
+package com.java.xml;
+
+public class CreateDOMxml {
+	
+	public static void main(String[] arg0){
+		
+	}
+
+}
